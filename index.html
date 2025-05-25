@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="img/icon_logo.png">
+    <meta name="description"
+        content="A Suprema do Acrílico - Seu espaço de beleza e cuidado! Oferecemos serviços de nail design e spa dos pés, além de cursos completos para quem deseja aprender ou se especializar na área.">
+    <meta name="keywords"
+        content="nail design, spa dos pés, cursos de beleza, manicure, pedicure, acrílico, gel, Jenyffer Araújo">
+    <meta name="author" content="Jenyffer Araújo Academy">
+    <meta name="theme-color" content="#00221b">
+    <title>Suprema do Acrílico</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comfortaa', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #00221b;
+            color: #fff;
+        }
+
+        .navbar img {
+            height: 60px;
+        }
+
+        .navbar nav a {
+            color: #fff;
+            margin-left: 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .hero {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem;
+            background: url('img/fundo_verde.jpg') no-repeat center center/cover;
+            color: white;
+        }
+
+        .hero .texto-lado {
+            flex: 1;
+            width: 500px;
+            margin-left: 2rem;
+            text-align: center;
+        }
+
+        .hero .imagem-lado {
+            flex: 1;
+            text-align: center;
+            margin-left: 2rem;
+            width: 200px;
+        }
+
+        .hero .imagem-lado img {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .hero .texto-lado img {
+            width: 100%;
+            max-width: 350px;
+            margin-bottom: 1rem;
+        }
+
+        .botao {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            width: 140px;
+            height: auto;
+            /* Garante proporção correta */
+            display: block;
+            max-width: 100%;
+            /* Força o ajuste ao container */
+
+        }
+
+        .botao:hover {
+            transform: scale(1.05);
+        }
+
+        .hero .subtitle,
+        .hero .desc {
+            text-align: center;
+        }
+
+        .hero .subtitle {
+            font-size: 0.9rem;
+            /* antes: 1.2rem */
+        }
+
+        .hero .desc {
+            font-size: 0.9rem;
+            /* antes: 0.95rem */
+        }
+
+        .servicos {
+            background: url('img/fundo_serv.jpg') no-repeat center center/cover;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #333;
+        }
+
+        .servicos h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #b88b4a;
+        }
+
+        .servicos p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            padding: 1.5rem;
+            width: 260px;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            height: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            color: #b88b4a;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .botoes {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .botoes .botao {
+            width: 180px;
+            height: auto;
+        }
+
+        .cursos {
+            position: relative;
+            background: url("img/fundo_curso.jpg") no-repeat center center;
+            background-size: cover;
+            display: flex;
+            justify-content: space-between;
+            padding: 3rem 2rem;
+            flex-wrap: wrap;
+            color: #fff;
+        }
+
+        .cursos::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 0;
+        }
+
+        .curso-boxes {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            z-index: 1;
+            flex: 2;
+        }
+
+        .curso-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .curso-box img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .curso-texto h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .curso-texto p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .curso-img-lateral {
+            flex: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .curso-img-lateral img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        .curso-botao {
+            width: 100%;
+            text-align: center;
+            margin-top: 2rem;
+            z-index: 1;
+        }
+
+        .marca-parceira {
+            padding: 3rem 2rem;
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+        }
+
+        .conteudo-parceira {
+            display: flex;
+            width: 100%;
+            max-width: 1400px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .texto-parceira {
+            flex: 1;
+            max-width: 50%;
+            padding-right: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-nails {
+            width: 300px;
+            margin-bottom: 2rem;
+        }
+
+        .descricao-parceira {
+            text-align: justify;
+            color: #910189;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .imagem-produtos {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .imagem-produtos img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .botao {
+            margin-top: 1rem;
+            width: 200px;
+        }
+
+        .instrutora {
+            background: url('img/fundo_instru.jpg') no-repeat center center/cover;
+            padding: 3rem 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .conteudo-instrutora {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1400px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+
+        .texto-instrutora h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .texto-instrutora p {
+            font-size: 1rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .texto-instrutora {
+            flex: 1;
+            max-width: 50%;
+            color: #b128aa;
+            text-align: center;
+            /* <-- Isso centraliza o conteúdo */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 500px;
+        }
+
+
+        .imagem-instrutora img {
+            width: 350px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .footer {
+            background-color: #1f1f1f;
+            color: #fff;
+            display: flex;
+            justify-content: space-around;
+            /* distribuição horizontal */
+            padding: 2rem;
+            flex-wrap: wrap;
+            /* empilha em telas pequenas */
+            font-family: 'Poppins', sans-serif;
+            text-align: left;
+        }
+
+        .footer-col {
+            flex: 1;
+            max-width: 250px;
+            margin: 1rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #fff;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-col h4::after {
+            content: "";
+            display: block;
+            width: 40px;
+            /* comprimento da linha */
+            height: 2px;
+            /* espessura */
+            background-color: #d48ae2;
+            /* cor do tracinho */
+            margin-top: 5px;
+        }
+
+
+        .footer-col p,
+        .footer-col a {
+            color: #ccc;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-col {
+                max-width: none;
+                width: 100%;
+            }
+
+            .footer-col p {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero .imagem-lado,
+            .hero .texto-lado {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero .texto-lado {
+                margin-left: 0;
+                padding: 1rem;
+            }
+
+            .hero .texto-lado img {
+                width: 100%;
+            }
+
+            .hero .desc,
+            .hero .subtitle {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .botao {
+                width: 80%;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <img src="img/logo_jeny.png" alt="Logo">
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#cursos">Cursos</a>
+            <a href="#parceira">Marca Parceira</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="texto-lado">
+            <img src="img/suprema_texto.png" alt="A Suprema do Acrílico">
+            <p class="subtitle"><span style="font-weight: 900; font-size: 1.4rem;">Bem-vindas Supremas</span><br>O Seu
+                Espaço de Beleza e Cuidado! <br> <br></p>
+            <p class="desc">Oferecemos serviços de nail design e spa dos pés, <br> com atendimento personalizado para
+                realçar
+                sua beleza <br> com carinho e qualidade. <br><br>Quer ir além? <br> Temos cursos completos para quem
+                deseja aprender <br>
+                ou se especializar na área. <br> Agende seu horário ou inscreva-se agora! <br><br></p>
+            <a href="#cursos"><img src="img/bot_aprender.png" class="botao" alt="Quero Aprender"
+                    style="width: 180px; height: auto; display: block; margin: 0 auto;"></a>
+        </div>
+        <div class="imagem-lado">
+            <img src="img/foto_suprema.png" alt="Personagem Suprema">
+        </div>
+    </section>
+
+    <section class="servicos" id="servicos">
+        <h2>Nossos Serviços</h2>
+        <p>Transforme suas mãos e pés com nossos cuidados especializados!<br>
+            Trabalhamos com técnicas modernas e produtos de alta qualidade para oferecer o melhor em:</p>
+
+        <div class="cards">
+            <div class="card">
+                <img src="img/extens_icon.png" alt="Extensão de Unhas">
+                <h3> <br>Extensão de Unhas (TIP)</h3>
+                <p>Aplicação e manutenção com decorações exclusivas, acabamento impecável e durabilidade.</p>
+            </div>
+            <div class="card">
+                <img src="img/banho_icon.png" alt="Banho de Gel e Acrílico">
+                <h3> <br>Banho de Gel e Acrílico</h3>
+                <p>Fortalecimento e beleza para unhas naturais ou alongadas.</p>
+            </div>
+            <div class="card">
+                <img src="img/manipedi_icon.png" alt="Manicure e Pedicure">
+                <h3> <br>Manicure e Pedicure</h3>
+                <p>Do clássico ao moderno, com esmaltagem perfeita, cuticulagem precisa e tendências atuais.</p>
+            </div>
+            <div class="card">
+                <img src="img/podo_icon.png" alt="Tratamentos Podais">
+                <h3> <br>Tratamentos Podais</h3>
+                <p>Um verdadeiro SPA nos pés com escalda-pés, jelly Spa Express, plástica dos pés e muito mais.</p>
+            </div>
+        </div>
+
+        <div class="botoes">
+            <a href="https://drive.google.com/file/d/1LAnF5phJZeiDG4VsBbATo6gxyh_2yUyC/view?usp=drive_link"
+                target="_blank"><img src="img/bot_tabela.png" class="botao" alt="Tabela Completa"></a>
+            <a href="https://wa.me/558396515011"><img src="img/bot_agendar.png" class="botao" alt="Agendar"></a>
+        </div>
+    </section>
+
+    <section id="cursos" class="cursos">
+        <div class="curso-boxes">
+            <div class="curso-box">
+                <img src="img/curso_gel.png" alt="Curso Gel Iniciante" style="width: 200px;">
+                <div class="curso-texto">
+                    <h3>Gel Iniciante</h3>
+                    <p>
+                        Aprenda do zero com técnica, teoria e prática profissional!<br>
+                        É ideal para quem deseja entrar no mundo das unhas com confiança e dominar a arte do alongamento
+                        em gel.<br>
+                        O conteúdo é completo e pensado para formar profissionais preparados para o mercado.
+                    </p>
+                </div>
+            </div>
+
+            <div class="curso-box">
+                <img src="img/curso_acri.png" alt="Curso Acrílico" style="width: 200px;">
+                <div class="curso-texto">
+                    <h3>Acrílico Iniciante/Intermediário</h3>
+                    <p>
+                        Domine a técnica queridinha do momento com segurança e perfeição!<br>
+                        Nossa aula completa vai ajudar quem quer aprender tudo do zero ou se aperfeiçoar na técnica com
+                        acabamentos impecáveis,<br>
+                        resistência e muita elegância. Ideal para iniciantes ou para quem deseja se aperfeiçoar na
+                        técnica.
+                    </p>
+                </div>
+            </div>
+
+            <div class="curso-box">
+                <img src="img/curso_pes.png" alt="Curso Pés de Cinderela" style="width: 200px;">
+                <div class="curso-texto">
+                    <h3>Pés de Cinderela</h3>
+                    <p>
+                        Nesse curso você vai se tornar a rainha do tratamento dos pés!<br>
+                        Com conhecimento de podologia e passo a passo de qualidade profissional,<br>
+                        você aprenderá a realizar escaldapés, jelly spa e plástica dos pés, com técnicas claras e
+                        práticas que encantam o público com o nível de fofura que se torna.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="curso-img-lateral">
+            <img src="img/foto_curso.png" alt="Instrutora Jenyffer Araújo" style="width: 300px;">
+        </div>
+
+        <div class="curso-botao">
+            <a href="#contato"><img src="img/bot_aprender.png" class="botao" alt="Quero Aprender"
+                    style="width: 180px; height: auto; display: block; margin: 0 auto;"></a>
+        </div>
+    </section>
+
+
+    <section id="parceira" class="marca-parceira">
+        <div class="conteudo-parceira">
+            <div class="texto-parceira">
+                <img src="img/logo_nails.png" alt="Logo King Nails" class="logo-nails">
+                <div class="descricao-parceira">
+                    <p>
+                        Nasceu do desejo de um time com muita paixão por cosméticos em desenvolver uma nova marca para o
+                        mercado brasileiro, que fosse ao mesmo tempo inovadora, especializada nos segmentos de
+                        alongamento de unhas e cosméticos.
+                    </p>
+                    <p>
+                        Oferecemos produtos com qualidade, modernos e com credibilidade testada. Nossa equipe é
+                        composta por profissionais altamente qualificados proporcionando uma compra
+                        segura e com atendimento diferenciado.
+                    </p>
+                </div>
+                <a href="https://www.kingnailspro.com.br/"><img src="img/bot_conhecer.png" class="botao"
+                        alt="Quero Conhecer"></a>
+            </div>
+
+            <div class="imagem-produtos">
+                <img src="img/produt_nails.jpg" alt="Produtos King Nails">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="instrutora">
+        <div class="conteudo-instrutora">
+            <div class="texto-instrutora">
+                <h2>Conheça sua Instrutora!</h2>
+                <p>
+                    Olá Supremas, Sou a Jenyffer Araújo, mãe de três, <br>
+                    apaixonada pela beleza e por transformar vidas através <br>
+                    do meu trabalho. Vim da área da saúde, sou maquiadora <br>
+                    e nail designer, e foi nesse universo que escolhi escrever <br>
+                    minhas melhores histórias. <br>
+                    Com mais de 25 formações e anos de experiência, <br>
+                    me tornei referência como profissional e instrutora. <br>
+                    Já formei várias alunas na área da beleza <br>
+                    e sou conhecida por ensinar com amor, clareza <br>
+                    e muita dedicação, mesmo durante os atendimentos! <br>
+                    Empreender não é fácil, mas minha força vem <br>
+                    da minha família e da paixão pelo que faço. <br>
+                    Acredito no poder do conhecimento e quero <br>
+                    compartilhar tudo que aprendi com você, <br>
+                    para que você também brilhe e conquiste seu espaço. <br> <br>
+
+                    <span style="font-weight: 700;">Vamos juntas nessa jornada?</span>
+                </p>
+            </div>
+            <div class="imagem-instrutora">
+                <img src="img/foto_instru.png" alt="Instrutora Jenyffer Araújo">
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer" id="contato">
+        <div class="footer-col">
+            <h4>Sobre a Instrutora</h4>
+            <p>Transformando vidas através da beleza.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Links Rápidos</h4>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#parceira">Marca Parceira</a></li>
+                <li><a href="#instrutora">Sobre a Instrutora</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contato</h4>
+            <p><img src="img/icon_local.png" alt="Ícone de localização" class="icon"> <a
+                    href="https://maps.app.goo.gl/CUQJdFnH3ozQjzUh7" target="_blank"> Rua 2 de fevereiro, 1632 - João
+                    Pessoa </a>
+            </p>
+            <p><img src="img/icon_zap.png" alt="Ícone de telefone" class="icon"> <a href="https://wa.me/558396515011"
+                    target="_blank"> 83 99615.5011 </a></p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Redes Sociais</h4>
+            <p><img src="img/icon_inst.png" alt="Instagram" class="icon"> <a
+                    href="https://www.instagram.com/jenyfferaraujoacademy/" target="_blank"> @jennyferaraujoacademy </a>
+            </p>
+            <p><img src="img/icon_face.png" alt="Facebook" class="icon"> Jennyfer Araújo Academy</p>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById("nav-menu");
+            nav.classList.toggle("active");
+        }
+    </script>
+
+</body>
+
+</html>
