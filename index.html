@@ -496,6 +496,131 @@
                 max-width: 200px;
             }
         }
+
+        /* CORREÇÕES ADICIONAIS */
+
+        /* Remove margens brancas laterais no mobile */
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Alinha .curso-box em coluna no mobile */
+        @media (max-width: 768px) {
+            .curso-box {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .curso-box img {
+                width: 70%;
+                max-width: 200px;
+            }
+        }
+
+        /* Ajusta seção 'parceira' no mobile */
+        @media (max-width: 768px) {
+            .conteudo-parceira {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .texto-parceira {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .logo-nails {
+                width: 200px;
+            }
+
+            .descricao-parceira {
+                text-align: center;
+            }
+
+            .imagem-produtos {
+                max-width: 100%;
+                margin-top: 2rem;
+            }
+
+            .imagem-produtos img {
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+
+        /* Alinha título 'Conheça sua instrutora' no mobile */
+        @media (max-width: 768px) {
+            .conteudo-instrutora {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .texto-instrutora h2 {
+                text-align: center;
+            }
+
+            .imagem-instrutora {
+                margin-top: 2rem;
+            }
+        }
+
+        /* Centraliza logo e melhora links navbar no mobile */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .navbar img {
+                margin-bottom: 1rem;
+            }
+
+            .navbar nav {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .navbar nav a {
+                font-size: 13px;
+                margin: 0;
+            }
+        }
+
+        /* Centraliza imagem na seção "Início" no mobile */
+        @media (max-width: 768px) {
+            .hero .imagem-lado {
+                margin-left: 0;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .hero .imagem-lado img {
+                max-width: 250px;
+            }
+        }
+
+        .footer-col p,
+.footer-col a {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    line-height: 1.4;
+}
+
+.footer-col a img,
+.footer-col p img {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
     </style>
 </head>
 
